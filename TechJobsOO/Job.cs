@@ -14,6 +14,11 @@ namespace TechJobsOO
 
         // TODO: Add the two necessary constructors.
 
+       
+
+              
         // TODO: Generate Equals() and GetHashCode() methods.
+       
+       
     }
 }

@@ -9,15 +9,24 @@ namespace TechJobsOO
 
         // TODO: Change the fields to auto-implemented properties.
 
+        public int Id { get; }
+        public static int NextId;
+        public string Value { get; set; }
+
+
+
+
         public CoreCompetency()
         {
             id = nextId;
             nextId++;
         }
 
-        public CoreCompetency(string v) : this()
+    
+        public CoreCompetency(string value) : this()//  It ALSO initializes id for the object by calling the first constructor statement with the : this() syntax
         {
-            value = v;
+            
+            Value = value;
         }
 
         public override bool Equals(object obj)
@@ -37,4 +46,4 @@ namespace TechJobsOO
         }
     }
     }
-}
+

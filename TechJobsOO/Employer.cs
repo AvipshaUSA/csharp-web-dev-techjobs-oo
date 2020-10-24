@@ -13,13 +13,14 @@ namespace TechJobsOO
             nextId++;
         }
 
-        public Employer(string value) : this()
+        public Employer(string value) : this()  //  It ALSO initializes id for the object by calling the first constructor statement with the : this() syntax
         {
             Value = value;
         }
 
         public override bool Equals(object obj)
         {
+            
             return obj is Employer employer &&
                    Id == employer.Id;
         }
@@ -31,7 +32,7 @@ namespace TechJobsOO
 
         public override string ToString()
         {
-            return Value;
+            return Value + ":" + Id ;
         }
     }
 }

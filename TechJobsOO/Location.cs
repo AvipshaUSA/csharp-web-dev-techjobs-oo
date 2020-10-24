@@ -14,6 +14,11 @@ namespace TechJobsOO
         }
 
         // TODO: Add a second constructor to this class that uses the Location() constructor and sets the value of the value field.
+        public Location(string value) // It ALSO initializes id for the object by calling the first constructor statement with the : this() syntax
+        {
+            Value = value;
+
+        }
 
         public override bool Equals(object obj)
         {
