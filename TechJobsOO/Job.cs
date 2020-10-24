@@ -1,4 +1,5 @@
 ﻿using System;
+
 namespace TechJobsOO
 {
     public class Job
@@ -14,11 +15,37 @@ namespace TechJobsOO
 
         // TODO: Add the two necessary constructors.
 
-       
+       public Job()
+        {
+            Id = nextId;
+            nextId++;
+        }
 
-              
+        public Job(string name, Employer employerName , Location employerLocation, PositionType jobType, CoreCompetency jobCoreCompetency) : this() // :this() will initialize an id for that constructor too
+        {
+            Name = name;
+            EmployerName = employerName;
+            EmployerLocation = employerLocation;
+            JobType = jobType;
+            JobCoreCompetency = jobCoreCompetency;
+        }
+
+
         // TODO: Generate Equals() and GetHashCode() methods.
-       
-       
+        public override bool Equals(object obj) // right click on the class name and generate by Id
+        {
+            return obj is Job job &&
+                   Id == job.Id;
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(Id);
+        }
+
+
+        
+
+
     }
 }
