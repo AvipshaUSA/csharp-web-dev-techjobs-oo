@@ -44,7 +44,12 @@ namespace TechJobsOO
         }
 
 
-        
+       
+
+        public override string ToString()
+        {
+            return $"\nName: {Name};\nEmployer: {EmployerName}\nLocation: {EmployerLocation}\nPosition Type: {JobType}\nCore Competency: {JobCoreCompetency}\n";
+        }
 
 
     }

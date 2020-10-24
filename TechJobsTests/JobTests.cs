@@ -1,6 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.ComponentModel.DataAnnotations;
 using TechJobsOO;
+using System;
 
 
 
@@ -28,6 +29,8 @@ namespace TechJobsTests
         // initialize object. it will initialize first then will go to other methods
         Job job1;
         Job job2;
+        string toString;
+
         [TestInitialize]
 
         //Test the full constructor
@@ -57,6 +60,24 @@ namespace TechJobsTests
         }
 
 
+        //Test Blank line before and after the job information means need to check for \n at begining and \n at the End
+        [TestMethod]
+        public void ToStringBlanckLine()
+        {
+            //job1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+
+                toString =job1.ToString();
+            Assert.AreEqual(toString[0], '\n'); // \n at begining at index 0
+
+
+
+            //Assert.AreEqual(toString[^1], '\n');// \n at the end of a sequence(i)
+
+            Assert.AreEqual(toString[toString.Length-1], '\n');// \n check at the end of sequence(ii), (i)&(ii)both are same indifferent way
+                                               
+                                                 
+
+        }
 
 
     }
