@@ -33,7 +33,7 @@ namespace TechJobsOO
             JobType = jobType;
             JobCoreCompetency = jobCoreCompetency;
         }
-        public  string EmptyString(string value)
+        public  string EmptyString(string value)  // this method returning a string to the ToString() method
         {
             string newValue;
 
