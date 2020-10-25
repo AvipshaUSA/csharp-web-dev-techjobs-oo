@@ -2,8 +2,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.ComponentModel.DataAnnotations;
 using TechJobsOO;
 using System;
-
-
+using System.Net.Http.Headers;
 
 namespace TechJobsTests
 {
@@ -87,15 +86,28 @@ namespace TechJobsTests
             job1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
             toString = job1.ToString();
             Assert.IsTrue( toString.Contains("\nId: "));
-           // toString = job1.EmployerName.Value.ToString();
+          
             Assert.IsTrue( toString.Contains("\nName: "));
             Assert.IsTrue(toString.Contains("\nEmployer: "));
            Assert.IsTrue(toString.Contains("\nLocation: "));
             Assert.IsTrue(toString.Contains("\nPosition Type: "));
             Assert.IsTrue(toString.Contains("\nCore Competency: "));
+
+           
+
+        }
+        [TestMethod]
+        public void FieldValueTest()
+        {
+            Assert.AreEqual(job1.Name, "Product tester");
+            Assert.AreEqual(job1.EmployerName.Value, "ACME");
+            Assert.AreEqual(job1.EmployerLocation.Value, "Desert");
+            Assert.AreEqual(job1.JobType.Value, "Quality control");
+            Assert.AreEqual(job1.JobCoreCompetency.Value, "Persistence");
+
         }
 
-        [TestMethod]
+            [TestMethod]
         public void LebelFieldIsEmpty()
         {
 

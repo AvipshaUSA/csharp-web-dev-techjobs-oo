@@ -26,14 +26,8 @@ namespace TechJobsOO
         public Job(string name, Employer employerName , Location employerLocation, PositionType jobType, CoreCompetency jobCoreCompetency) : this() // :this() will initialize an id for that constructor too
         {
 
-            //if (name == "" || name == null)
-            //{
-            //    Name = "Data Not Available";
-            //}
-            //else
-            //{
-                Name = name;
-           // }
+                
+            Name = name;
             EmployerName = employerName;
             EmployerLocation = employerLocation;
             JobType = jobType;
