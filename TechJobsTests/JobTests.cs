@@ -89,13 +89,14 @@ namespace TechJobsTests
           
             Assert.IsTrue( toString.Contains("\nName: "));
             Assert.IsTrue(toString.Contains("\nEmployer: "));
-           Assert.IsTrue(toString.Contains("\nLocation: "));
+            Assert.IsTrue(toString.Contains("\nLocation: "));
             Assert.IsTrue(toString.Contains("\nPosition Type: "));
-            Assert.IsTrue(toString.Contains("\nCore Competency: "));
-
-           
+            Assert.IsTrue(toString.Contains("\nCore Competency: ")); 
 
         }
+
+
+        // Label contains value for each Line
         [TestMethod]
         public void FieldValueTest()
         {

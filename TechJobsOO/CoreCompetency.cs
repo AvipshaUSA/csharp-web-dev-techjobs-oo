@@ -3,49 +3,10 @@
 
 namespace TechJobsOO
 {
-    public class CoreCompetency
+    public class CoreCompetency : JobField  // extend the Corecompetency class to JobField class
     {
-        private int id;
-        private static int nextId = 1;
-        private string value;
-
-        // TODO: Change the fields to auto-implemented properties.
-
-        public int Id { get; }
-        public static int NextId;
-        public string Value { get; set; }
-
-
-
-
-        public CoreCompetency()
-        {
-            id = nextId;
-            nextId++;
-        }
-
-    
-        public CoreCompetency(string value) : this()//  It ALSO initializes id for the object by calling the first constructor statement with the : this() syntax
-        {
-            
-            Value = value;
-        }
-
-        public override bool Equals(object obj)
-        {
-            return obj is CoreCompetency competency &&
-                   id == competency.id;
-        }
-
-        public override int GetHashCode()
-        {
-            return HashCode.Combine(id);
-        }
-
-        public override string ToString()
-        {
-            
-                return value ;
+        public CoreCompetency(string value) : base(value) //inherit the value arg constructor from jobField
+        { 
         }
     }
     }

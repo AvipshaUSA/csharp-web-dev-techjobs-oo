@@ -1,38 +1,14 @@
 ﻿using System;
 namespace TechJobsOO
 {
-    public class Employer
+    public class Employer : JobField  //extend the JobField class into Employer.
     {
-        public int Id { get; }
-        private static int nextId = 1;
-        public string Value { get; set; }
 
-        public Employer()
+        public Employer(string value) : base(value)
         {
-            Id = nextId;
-            nextId++;
+
         }
 
-        public Employer(string value) : this()  //  It ALSO initializes id for the object by calling the first constructor statement with the : this() syntax
-        {
-            Value = value;
-        }
-
-        public override bool Equals(object obj)
-        {
-            
-            return obj is Employer employer &&
-                   Id == employer.Id;
-        }
-
-        public override int GetHashCode()
-        {
-            return HashCode.Combine(Id);
-        }
-
-        public override string ToString()
-        {
-                return Value;
-        }
+        
     }
 }
