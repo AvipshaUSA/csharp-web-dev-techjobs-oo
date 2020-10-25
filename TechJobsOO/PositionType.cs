@@ -14,8 +14,9 @@ namespace TechJobsOO
         }
 
         public PositionType(string value) : this() // It ALSO initializes id for the object by calling the first constructor statement with the : this() syntax
-        {
-            Value = value;
+        {  
+                Value = value;
+            
         }
 
         // TODO: Add custom Equals(), GetHashCode(), and ToString() methods.
@@ -23,7 +24,7 @@ namespace TechJobsOO
 
         public override string ToString()
         {
-            return this.Value ; // just returning a valu
+            return Value ; // just returning a valu
         }
 
         // using generatte optin by right clicking the class name and check box select id.

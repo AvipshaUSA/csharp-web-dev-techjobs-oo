@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 
 namespace TechJobsOO
 {
@@ -23,11 +25,34 @@ namespace TechJobsOO
 
         public Job(string name, Employer employerName , Location employerLocation, PositionType jobType, CoreCompetency jobCoreCompetency) : this() // :this() will initialize an id for that constructor too
         {
-            Name = name;
+
+            //if (name == "" || name == null)
+            //{
+            //    Name = "Data Not Available";
+            //}
+            //else
+            //{
+                Name = name;
+           // }
             EmployerName = employerName;
             EmployerLocation = employerLocation;
             JobType = jobType;
             JobCoreCompetency = jobCoreCompetency;
+        }
+        public  string EmptyString(string value)
+        {
+            string newValue;
+
+            if (value == "" || value == null)
+            {
+                newValue = "Data not available";
+                //Console.WriteLine("Empty: " + newValue);
+            }
+            else
+            {
+                newValue =  value;
+            }
+            return newValue;
         }
 
 
@@ -44,11 +69,16 @@ namespace TechJobsOO
         }
 
 
-       
+
 
         public override string ToString()
         {
-            return $"\nName: {Name};\nEmployer: {EmployerName}\nLocation: {EmployerLocation}\nPosition Type: {JobType}\nCore Competency: {JobCoreCompetency}\n";
+            if ( Name == "" && EmployerName.Value == "" && EmployerLocation.Value == "" && JobType.Value == "" && JobCoreCompetency.Value == "")
+                return "OOPS! This job does not seem to exist.";
+
+            return $"\nId: {Id}\nName: {EmptyString(Name)}\nEmployer: {EmptyString(EmployerName.Value)}\nLocation: {EmptyString(EmployerLocation.Value)}\nPosition Type: {EmptyString(JobType.Value)}\nCore Competency: {EmptyString(JobCoreCompetency.Value)}\n";
+
+            //return $"\nId: {Id} {result}\n\nId: {Id}\nName: {Name}\nEmployer: {EmployerName}\nLocation: {EmployerLocation}\nPosition Type: {JobType}\nCore Competency: {JobCoreCompetency}\n";
         }
 
 
