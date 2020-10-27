@@ -67,8 +67,17 @@ namespace TechJobsOO
 
         public override string ToString()
         {
-            if ( Name == "" && EmployerName.Value == "" && EmployerLocation.Value == "" && JobType.Value == "" && JobCoreCompetency.Value == "")
-                return "OOPS! This job does not seem to exist.";
+            // validation for no-arg constructor which is the null object or you can say the classes it possesed is null, ex: job5
+
+            if (Name == null && EmployerName == null && EmployerLocation == null && JobType == null && JobCoreCompetency == null)
+                return "Id:" + Id + "\nOOPS! This job does not seem to exist.\n";
+
+            //validation for sending 5 arg constructor with no value in it, ex:job4
+
+          else  if ( Name == "" && EmployerName.Value == "" && EmployerLocation.Value == "" && JobType.Value == "" && JobCoreCompetency.Value == "")
+                return "Id: " + Id +"\nOOPS! This job does not seem to exist.\n";
+
+
 
             return $"\nId: {Id}\nName: {EmptyString(Name)}\nEmployer: {EmptyString(EmployerName.Value)}\nLocation: {EmptyString(EmployerLocation.Value)}\nPosition Type: {EmptyString(JobType.Value)}\nCore Competency: {EmptyString(JobCoreCompetency.Value)}\n";
 
